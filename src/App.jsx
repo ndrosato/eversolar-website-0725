@@ -1099,7 +1099,7 @@ function App() {
                   size="lg" 
                   variant="secondary"
                   onClick={() => setShowWhitepaperPopup(true)}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 border-0"
+                                     className="bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 border-0"
                 >
                   Download Our Whitepaper
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -2108,7 +2108,7 @@ function App() {
                     required
                     value={whitepaperFormData.first_name}
                     onChange={handleWhitepaperInputChange}
-                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                   />
                 </div>
                 <div>
@@ -2118,7 +2118,7 @@ function App() {
                     required
                     value={whitepaperFormData.last_name}
                     onChange={handleWhitepaperInputChange}
-                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                   />
                 </div>
               </div>
@@ -2131,7 +2131,7 @@ function App() {
                   required
                   value={whitepaperFormData.email}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
@@ -2143,7 +2143,7 @@ function App() {
                   required
                   value={whitepaperFormData.phone}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
@@ -2154,7 +2154,7 @@ function App() {
                   required
                   value={whitepaperFormData.business_name}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
@@ -2165,7 +2165,7 @@ function App() {
                   required
                   value={whitepaperFormData.postcode}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
@@ -2176,7 +2176,7 @@ function App() {
                   required
                   value={whitepaperFormData.system_kw}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
@@ -2187,14 +2187,14 @@ function App() {
                   required
                   value={whitepaperFormData.buildings_managed}
                   onChange={handleWhitepaperInputChange}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  className="border-gray-300 focus:border-green-500 focus:ring-green-500"
                 />
               </div>
 
               <Button
                 type="submit"
                 disabled={whitepaperIsSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold py-3 rounded-lg transition-all duration-200"
+                                  className="w-full bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900 text-white font-semibold py-3 rounded-lg transition-all duration-200"
               >
                 {whitepaperIsSubmitting ? 'Processing...' : 'Download'}
               </Button>
@@ -2213,7 +2213,7 @@ function App() {
                 Details submitted will be used to provide information relevant to your request. You can opt-out at any time and your information will never be shared. By submitting this form you agree to our{' '}
                 <button 
                   onClick={() => navigateToPage('privacy-policy')}
-                  className="text-blue-600 hover:underline"
+                  className="text-green-600 hover:underline"
                 >
                   Privacy Policy
                 </button>.

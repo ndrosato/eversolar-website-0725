@@ -12,7 +12,7 @@
   --card-foreground: 224 71.4% 4.1%;
   --popover: 0 0% 100%;
   --popover-foreground: 224 71.4% 4.1%;
-  --primary: 220.9 39.3% 11%;
+  --primary: 142 76% 36%;
   --primary-foreground: 210 20% 98%;
   --secondary: 220 14.3% 95.9%;
   --secondary-foreground: 220.9 39.3% 11%;
@@ -34,8 +34,8 @@
   --card-foreground: 210 20% 98%;
   --popover: 224 71.4% 4.1%;
   --popover-foreground: 210 20% 98%;
-  --primary: 210 20% 98%;
-  --primary-foreground: 220.9 39.3% 11%;
+  --primary: 142 76% 36%;
+  --primary-foreground: 210 20% 98%;
   --secondary: 215 27.9% 16.9%;
   --secondary-foreground: 210 20% 98%;
   --muted: 215 27.9% 16.9%;
@@ -136,11 +136,11 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent;
   }
   
   .performance-stat {
-    @apply text-3xl sm:text-4xl md:text-6xl font-bold text-blue-600;
+    @apply text-3xl sm:text-4xl md:text-6xl font-bold text-green-600;
   }
   
   /* Mobile-specific fixes */

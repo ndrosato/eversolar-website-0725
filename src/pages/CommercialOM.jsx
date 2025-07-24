@@ -298,7 +298,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Download Our Whitepaper - Full Width */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="container-max text-center">
           <h2 className="text-2xl font-bold mb-4">Download Our Whitepaper</h2>
           <p className="text-lg mb-6 opacity-90">
@@ -307,7 +307,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
           </p>
           <Button 
             onClick={() => setShowWhitepaperPopup(true)}
-            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3"
+            className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3"
           >
             Download Free Whitepaper
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -531,7 +531,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Protect Your Investment - Full Width */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="container-max text-center">
           <h3 className="text-2xl font-bold mb-4">Protect Your Investment</h3>
           <p className="text-lg mb-6 opacity-90">
@@ -539,7 +539,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
           </p>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-3"
+            className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3"
           >
             Schedule Warranty-Compliant Cleaning
             <ArrowRight className="ml-2 w-5 h-5" />
