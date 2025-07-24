@@ -4,7 +4,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm ci",
-  "nodeVersion": "18.x",
   "functions": {
     "api/whitepaper.js": {
       "runtime": "nodejs18.x"
