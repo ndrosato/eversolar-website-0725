@@ -308,35 +308,35 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
           backgroundPosition: 'center center'
         }}
       >
-        <div className="container-max text-center">
+        <div className="container-max text-center pt-16 sm:pt-20 lg:pt-12">
           <div className="max-w-5xl mx-auto">
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
               Professional{' '}
               <span className="text-primary">Solar Bird Proofing</span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-8 sm:mb-12 lg:mb-16 text-gray-200 max-w-4xl mx-auto leading-relaxed px-2">
               When birds become a problem and start nesting under your solar panels, our professional bird proofing solutions prevent damage, maintain warranties, and restore optimal performance.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 sm:mb-20 lg:mb-12 px-2">
               <Button 
                 onClick={() => {
                   navigateToPage('home')
                   setTimeout(() => scrollToSection('contact'), 100)
                 }}
                 size="lg"
-                className="btn-primary text-lg px-10 py-4 h-auto"
+                className="btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 Get Your Free Assessment
-                <ArrowRight className="ml-3 w-5 h-5" />
+                <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               <Button 
                 size="lg"
-                className="btn-secondary text-lg px-10 py-4 h-auto border-2 border-white"
+                className="btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto border-2 border-white"
               >
-                <Phone className="mr-3 w-5 h-5" />
+                <Phone className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
                 Call 0439 729 969
               </Button>
             </div>
@@ -831,7 +831,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -859,10 +859,10 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 

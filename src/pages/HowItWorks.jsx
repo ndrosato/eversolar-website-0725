@@ -300,35 +300,35 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
           backgroundPosition: 'center center'
         }}
       >
-        <div className="container-max text-center">
+        <div className="container-max text-center pt-16 sm:pt-20 lg:pt-12">
           <div className="max-w-5xl mx-auto">
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
               How It Works{' '}
               <span className="text-primary">Our Proven Process</span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-8 sm:mb-12 lg:mb-16 text-gray-200 max-w-4xl mx-auto leading-relaxed px-2">
               Simple. Safe. Effective. We make solar maintenance effortless with our proven 6-step process that delivers measurable results.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-16 sm:mb-20 lg:mb-12 px-2">
               <Button 
                 onClick={() => {
                   navigateToPage('home')
                   setTimeout(() => scrollToSection('contact'), 100)
                 }}
                 size="lg"
-                className="btn-primary text-lg px-10 py-4 h-auto"
+                className="btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 Get Your Free Assessment
-                <ArrowRight className="ml-3 w-5 h-5" />
+                <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               <Button 
                 size="lg"
-                className="btn-secondary text-lg px-10 py-4 h-auto border-2 border-white"
+                className="btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto border-2 border-white"
               >
-                <Phone className="mr-3 w-5 h-5" />
+                <Phone className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
                 Call 0439 729 969
               </Button>
             </div>
@@ -473,16 +473,16 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
                  alt="Before and After Solar Panel Cleaning Comparison" 
                  className="w-full h-auto rounded-2xl shadow-2xl"
                />
-              <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-2xl shadow-2xl border">
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-white p-3 md:p-8 rounded-xl md:rounded-2xl shadow-2xl border">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">25%</div>
-                  <p className="text-sm text-muted-foreground font-medium">Average Performance<br />Increase</p>
+                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">25%</div>
+                  <p className="text-xs md:text-sm text-muted-foreground font-medium">Average Performance<br />Increase</p>
                 </div>
               </div>
-              <div className="absolute -top-8 -left-8 bg-primary text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -top-4 -left-4 md:-top-8 md:-left-8 bg-primary text-white p-3 md:p-6 rounded-xl md:rounded-2xl shadow-xl">
                 <div className="text-center">
-                  <Shield className="w-8 h-8 mx-auto mb-2" />
-                  <p className="text-sm font-medium">$20M Insurance<br />Protected</p>
+                  <Shield className="w-5 h-5 md:w-8 md:h-8 mx-auto mb-1 md:mb-2" />
+                  <p className="text-xs md:text-sm font-medium">$20M Insurance<br />Protected</p>
                 </div>
               </div>
             </div>
@@ -592,7 +592,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -620,10 +620,10 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 

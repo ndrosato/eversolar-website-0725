@@ -298,7 +298,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Download Our Whitepaper - Full Width */}
-      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="section-padding bg-dark-blue text-white">
         <div className="container-max text-center">
           <h2 className="text-2xl font-bold mb-4">Download Our Whitepaper</h2>
           <p className="text-lg mb-6 opacity-90">
@@ -307,7 +307,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
           </p>
           <Button 
             onClick={() => setShowWhitepaperPopup(true)}
-            className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3"
+            className="bg-white text-dark-blue hover:bg-gray-100 font-semibold px-8 py-3"
           >
             Download Free Whitepaper
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -531,7 +531,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Protect Your Investment - Full Width */}
-      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="section-padding bg-primary text-white">
         <div className="container-max text-center">
           <h3 className="text-2xl font-bold mb-4">Protect Your Investment</h3>
           <p className="text-lg mb-6 opacity-90">
@@ -539,7 +539,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
           </p>
           <Button 
             onClick={() => scrollToSection('contact')}
-            className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3"
+            className="bg-white text-primary hover:bg-gray-100 font-semibold px-8 py-3"
           >
             Schedule Warranty-Compliant Cleaning
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -815,7 +815,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -840,10 +840,10 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 

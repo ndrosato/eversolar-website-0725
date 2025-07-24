@@ -530,7 +530,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Download Our Whitepaper - Full Width */}
-      <section className="section-padding bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="section-padding bg-dark-blue text-white">
         <div className="container-max text-center">
           <h2 className="text-2xl font-bold mb-4">Download Our Whitepaper</h2>
           <p className="text-lg mb-6 opacity-90">
@@ -539,7 +539,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
           </p>
           <Button 
             onClick={() => setShowWhitepaperPopup(true)}
-            className="bg-white text-green-600 hover:bg-gray-100 font-semibold px-8 py-3"
+            className="bg-white text-dark-blue hover:bg-gray-100 font-semibold px-8 py-3"
           >
             Download Free Whitepaper
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -818,7 +818,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -843,10 +843,10 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Solar Cleaning</button></li>
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Solar Cleaning</button></li>
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 
@@ -978,7 +978,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
                   name="system_size_kw"
                   type="number"
                   step="0.1"
-                  placeholder="System Size (kW)"
+                  placeholder="System Size (kW) *"
                   value={formData.system_size_kw}
                   onChange={handleInputChange}
                   className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"

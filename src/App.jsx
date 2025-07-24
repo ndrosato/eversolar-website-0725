@@ -820,7 +820,7 @@ function App() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
         }}
       >
-        <div className="container-max text-center">
+        <div className="container-max text-center pt-16 sm:pt-20 lg:pt-12">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               We Don't Clean Panels —{' '}
@@ -834,14 +834,14 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button 
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary text-lg px-8 py-4"
+                className="btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 Get a Quote
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               <Button 
                 onClick={() => navigateToPage('how-it-works')}
-                className="btn-secondary text-lg px-8 py-4 border-2 border-white"
+                className="btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto border-2 border-white"
               >
                 How It Works
               </Button>
@@ -1095,11 +1095,11 @@ function App() {
                   Get Commercial Quote
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button 
+                                <Button 
                   size="lg" 
                   variant="secondary"
                   onClick={() => setShowWhitepaperPopup(true)}
-                                     className="bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 border-0"
+                  className="bg-dark-blue text-white hover:bg-dark-blue/90 border-0"
                 >
                   Download Our Whitepaper
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -1622,9 +1622,7 @@ function App() {
                   ))}
                 </div>
                 <CardDescription>
-                  "EverSolar's maintenance program has transformed our solar farm's performance. 
-                  The 28% increase in output speaks for itself, but it's their attention to detail 
-                  and data-driven approach that truly sets them apart."
+                  "Our solar system's performance has improved significantly since starting the maintenance program — we're seeing a real difference in output. What impressed me most was the attention to detail and how they used performance data to guide every step."
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1633,8 +1631,8 @@ function App() {
                     <span className="font-bold text-primary">JH</span>
                   </div>
                   <div>
-                    <div className="font-semibold">James Harrison</div>
-                    <div className="text-sm text-muted-foreground">Operations Director, SunPeak Energy</div>
+                    <div className="font-semibold">James H.</div>
+                    <div className="text-sm text-muted-foreground">Operations Director</div>
                   </div>
                 </div>
               </CardContent>
@@ -1649,9 +1647,7 @@ function App() {
                   ))}
                 </div>
                 <CardDescription>
-                  "We've worked with several maintenance providers before EverSolar, and the difference 
-                  is night and day. Their robotic cleaning technology and certified technicians have 
-                  helped us achieve unprecedented efficiency levels."
+                  "We've dealt with a few different solar maintenance teams over the years, but none have come close to this level of professionalism. The cleaning equipment is top-notch, and our panels are running more efficiently than ever."
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1660,8 +1656,8 @@ function App() {
                     <span className="font-bold text-primary">MZ</span>
                   </div>
                   <div>
-                    <div className="font-semibold">Michelle Zhang</div>
-                    <div className="text-sm text-muted-foreground">Facility Manager, Greenfield Properties</div>
+                    <div className="font-semibold">Michelle Z.</div>
+                    <div className="text-sm text-muted-foreground">Facility Manager</div>
                   </div>
                 </div>
               </CardContent>
@@ -1676,9 +1672,7 @@ function App() {
                   ))}
                 </div>
                 <CardDescription>
-                  "As a homeowner with a significant solar investment, I wanted the best maintenance possible. 
-                  EverSolar's residential program has delivered exceptional ROI, with detailed reporting 
-                  that shows exactly how much more energy we're producing."
+                  "With a decent-sized solar setup at home, I wanted to make sure I was getting the most out of it. The maintenance service really paid off — I get clear reports showing the boost in output, and the panels look spotless."
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -1687,7 +1681,7 @@ function App() {
                     <span className="font-bold text-primary">RW</span>
                   </div>
                   <div>
-                    <div className="font-semibold">Robert Wilson</div>
+                    <div className="font-semibold">Robert W.</div>
                     <div className="text-sm text-muted-foreground">Homeowner</div>
                   </div>
                 </div>
@@ -1981,8 +1975,8 @@ function App() {
         </div>
       </section>
 
-            {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+                    {/* Footer */}
+        <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -2007,10 +2001,10 @@ function App() {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 
@@ -2191,10 +2185,10 @@ function App() {
                 />
               </div>
 
-              <Button
+                            <Button
                 type="submit"
                 disabled={whitepaperIsSubmitting}
-                                  className="w-full bg-gradient-to-r from-green-600 to-green-800 hover:from-green-700 hover:to-green-900 text-white font-semibold py-3 rounded-lg transition-all duration-200"
+                className="w-full bg-dark-blue hover:bg-dark-blue/90 text-white font-semibold py-3 rounded-lg transition-all duration-200"
               >
                 {whitepaperIsSubmitting ? 'Processing...' : 'Download'}
               </Button>
@@ -2202,7 +2196,7 @@ function App() {
               {whitepaperSubmitMessage && (
                 <div className={`text-center text-sm p-3 rounded-lg ${
                   whitepaperSubmitMessage.includes('Thank you') 
-                    ? 'bg-green-50 text-green-700 border border-green-200' 
+                    ? 'bg-primary/10 text-primary border border-primary/20' 
                     : 'bg-red-50 text-red-700 border border-red-200'
                 }`}>
                   {whitepaperSubmitMessage}
@@ -2213,7 +2207,7 @@ function App() {
                 Details submitted will be used to provide information relevant to your request. You can opt-out at any time and your information will never be shared. By submitting this form you agree to our{' '}
                 <button 
                   onClick={() => navigateToPage('privacy-policy')}
-                  className="text-green-600 hover:underline"
+                  className="text-primary hover:underline"
                 >
                   Privacy Policy
                 </button>.

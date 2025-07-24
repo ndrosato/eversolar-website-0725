@@ -243,7 +243,7 @@ const AboutUs = ({ navigateToPage, scrollToSection }) => {
         <section 
           className="py-32 bg-cover bg-center bg-no-repeat relative"
           style={{
-            backgroundImage: `linear-gradient(rgba(75, 85, 99, 0.7), rgba(75, 85, 99, 0.7)), url('/src/assets/about-us-hero-image.png')`
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/src/assets/about-us-hero-image.jpg')`
           }}
         >
           <div className="container mx-auto px-4">
@@ -378,15 +378,15 @@ const AboutUs = ({ navigateToPage, scrollToSection }) => {
                   setTimeout(() => scrollToSection('contact'), 100)
                 }}
                 size="lg"
-                className="bg-white text-primary hover:bg-gray-100 font-semibold px-10 py-4 h-auto text-lg"
+                className="bg-white text-primary hover:bg-gray-100 font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 Get a Quote
-                <ArrowRight className="ml-3 w-5 h-5" />
+                <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               <Button 
                 onClick={() => navigateToPage('how-it-works')}
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-10 py-4 h-auto text-lg"
+                className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 How It Works
               </Button>
@@ -411,7 +411,7 @@ const AboutUs = ({ navigateToPage, scrollToSection }) => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -436,10 +436,10 @@ const AboutUs = ({ navigateToPage, scrollToSection }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 

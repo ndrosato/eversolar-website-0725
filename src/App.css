@@ -12,7 +12,7 @@
   --card-foreground: 224 71.4% 4.1%;
   --popover: 0 0% 100%;
   --popover-foreground: 224 71.4% 4.1%;
-  --primary: 142 76% 36%;
+  --primary: 118 62% 42%;
   --primary-foreground: 210 20% 98%;
   --secondary: 220 14.3% 95.9%;
   --secondary-foreground: 220.9 39.3% 11%;
@@ -34,7 +34,7 @@
   --card-foreground: 210 20% 98%;
   --popover: 224 71.4% 4.1%;
   --popover-foreground: 210 20% 98%;
-  --primary: 142 76% 36%;
+  --primary: 118 62% 42%;
   --primary-foreground: 210 20% 98%;
   --secondary: 215 27.9% 16.9%;
   --secondary-foreground: 210 20% 98%;
@@ -136,11 +136,47 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent;
   }
   
   .performance-stat {
-    @apply text-3xl sm:text-4xl md:text-6xl font-bold text-green-600;
+    @apply text-3xl sm:text-4xl md:text-6xl font-bold text-primary;
+  }
+  
+  .footer-bg {
+    background-color: #004396;
+  }
+  
+  .footer-bg * {
+    color: white !important;
+  }
+  
+  .footer-bg *[class*="text-"] {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-bg h3, .footer-bg h4 {
+    color: white !important;
+  }
+  
+  .text-brand-green {
+    color: #2BAD29;
+  }
+  
+  .bg-brand-green {
+    background-color: #2BAD29;
+  }
+  
+  .border-brand-green {
+    border-color: #2BAD29;
+  }
+  
+  .bg-dark-blue {
+    background-color: #004396;
+  }
+  
+  .text-dark-blue {
+    color: #004396;
   }
   
   /* Mobile-specific fixes */

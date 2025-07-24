@@ -369,17 +369,17 @@ const EnterpriseContact = ({ scrollToSection, navigateToPage }) => {
               <Button 
                 onClick={() => scrollToSection('contact')}
                 size="lg"
-                className="btn-primary text-lg px-10 py-4 h-auto"
+                className="btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto"
               >
                 Schedule Direct Consultation
-                <ArrowRight className="ml-3 w-5 h-5" />
+                <ArrowRight className="ml-2 sm:ml-3 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
               <Button 
                 href="tel:0439729969"
                 size="lg"
-                className="btn-secondary text-lg px-10 py-4 h-auto border-2 border-white"
+                className="btn-secondary text-sm sm:text-base lg:text-lg px-6 sm:px-8 lg:px-10 py-3 sm:py-4 h-auto border-2 border-white"
               >
-                <Phone className="mr-3 w-5 h-5" />
+                <Phone className="mr-2 sm:mr-3 w-4 h-4 sm:w-5 sm:h-5" />
                 Call Direct: 0439 729 969
               </Button>
             </div>
@@ -758,7 +758,7 @@ const EnterpriseContact = ({ scrollToSection, navigateToPage }) => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground">
+      <footer className="footer-bg text-white">
         <div className="container-max section-padding">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Company Info */}
@@ -786,10 +786,10 @@ const EnterpriseContact = ({ scrollToSection, navigateToPage }) => {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-secondary-foreground/80">
-                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
+              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+                <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
               </ul>
             </div>
 
