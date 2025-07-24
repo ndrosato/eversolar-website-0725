@@ -346,14 +346,14 @@ function App() {
         <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
         }`}>
-          <div className="container-max px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+          <div className="container-max">
+            <div className="flex items-center justify-between h-16 lg:h-20">
               {/* Logo */}
               <div className="flex items-center">
                 <img 
                   src={isScrolled ? eversolarLogoBlack : eversolarLogoWhite} 
                   alt="EverSolar" 
-                  className="h-6 sm:h-8 lg:h-10 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
+                  className="h-8 lg:h-10 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
                   onClick={() => navigateToPage('home')}
                 />
               </div>
@@ -435,15 +435,15 @@ function App() {
 
               {/* Contact Info & CTA */}
               <div className="hidden lg:flex items-center space-x-4">
-                <a 
-                  href="tel:0439729969" 
-                  className={`flex items-center space-x-2 ${
-                    isScrolled ? 'text-gray-700' : 'text-white'
-                  }`}
-                >
-                  <Phone className="w-4 h-4" />
-                  <span className="font-medium">0439 729 969</span>
-                </a>
+                              <a 
+                href="tel:0439729969" 
+                className={`flex items-center space-x-2 ${
+                  isScrolled ? 'text-gray-700' : 'text-white'
+                }`}
+              >
+                <Phone className="w-4 h-4" />
+                <span className="font-medium">0439 729 969</span>
+              </a>
                 <Button 
                   onClick={() => {
                     navigateToPage('home')
@@ -538,10 +538,10 @@ function App() {
                     Contact
                   </button>
                   <div className="px-4 py-2">
-                    <a href="tel:0439729969" className="flex items-center space-x-2 text-gray-700 mb-3">
-                      <Phone className="w-4 h-4" />
-                      <span>0439 729 969</span>
-                    </a>
+                                      <a href="tel:0439729969" className="flex items-center space-x-2 text-gray-700 mb-3">
+                    <Phone className="w-4 h-4" />
+                    <span>0439 729 969</span>
+                  </a>
                     <Button 
                       onClick={() => {
                         navigateToPage('home')
@@ -614,14 +614,14 @@ function App() {
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
       }`}>
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+        <div className="container-max">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div className="flex items-center">
               <img 
                 src={isScrolled ? eversolarLogoBlack : eversolarLogoWhite} 
                 alt="EverSolar" 
-                className="h-6 sm:h-8 lg:h-10 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
+                className="h-8 lg:h-10 w-auto cursor-pointer transition-all duration-300 hover:scale-105"
                 onClick={() => scrollToSection('home')}
               />
             </div>
@@ -767,16 +767,17 @@ function App() {
                       >
                         Residential Solar Cleaning
                       </button>
-                      <button 
-                        onClick={() => {
-                          navigateToPage('solar-bird-proofing')
-                          setIsServicesDropdownOpen(false)
-                          setIsMenuOpen(false)
-                        }}
-                        className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
-                      >
-                        Solar Bird Proofing
-                      </button>
+                                              <button 
+                          onClick={() => {
+                            navigateToPage('solar-bird-proofing')
+                            setIsServicesDropdownOpen(false)
+                            setIsMenuOpen(false)
+                          }}
+                          className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
+                        >
+                          Solar Bird Proofing
+                        </button>
+
                     </div>
                   )}
                 </div>
@@ -814,54 +815,51 @@ function App() {
       {/* Hero Section */}
       <section 
         id="home" 
-        className="min-h-screen flex items-center justify-center text-white bg-cover bg-center bg-no-repeat relative px-4 sm:px-6 lg:px-8"
+        className="min-h-screen flex items-center justify-center text-white bg-cover bg-center bg-no-repeat relative"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center center',
-          backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
         }}
       >
-        <div className="container-max text-center pt-16 sm:pt-20 lg:pt-12">
+        <div className="container-max text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               We Don't Clean Panels —{' '}
               <span className="text-primary">We Protect Solar Assets</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-6 sm:mb-8 lg:mb-12 text-gray-200 max-w-3xl mx-auto px-2">
+            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
               Protect your solar investment with robotic precision and certified performance results.
             </p>
             
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-16 sm:mb-20 lg:mb-12 px-2">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <Button 
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                className="btn-primary text-lg px-8 py-4"
               >
                 Get a Quote
-                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button 
                 onClick={() => navigateToPage('how-it-works')}
-                className="btn-secondary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 border-2 border-white"
+                className="btn-secondary text-lg px-8 py-4 border-2 border-white"
               >
                 How It Works
               </Button>
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto px-2">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-center">Fully Insured – $20M Public Liability</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <Shield className="w-6 h-6 text-primary" />
+                <span className="text-sm font-medium">Fully Insured – $20M Public Liability</span>
               </div>
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-center">WorkSafe & OH&S Compliant</span>
+              <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <CheckCircle className="w-6 h-6 text-primary" />
+                <span className="text-sm font-medium">WorkSafe & OH&S Compliant</span>
               </div>
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 sm:col-span-2 md:col-span-1">
-                <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-primary flex-shrink-0" />
-                <span className="text-xs sm:text-sm font-medium text-center">Output-Performance Optimized – Guaranteed</span>
+              <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <TrendingUp className="w-6 h-6 text-primary" />
+                <span className="text-sm font-medium">Output-Performance Optimized – Guaranteed</span>
               </div>
             </div>
           </div>
@@ -870,30 +868,30 @@ function App() {
 
       {/* Value Propositions Section */}
       <section className="section-padding bg-muted">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Protecting Solar Assets with{' '}
               <span className="text-gradient">Precision</span>
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto px-2">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
               EverSolar combines robotic precision, certified expertise, and data-driven performance 
               to deliver superior solar panel maintenance with tangible, measurable returns.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Performance Boost */}
             <Card className="card-hover text-center">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+              <CardHeader>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="w-8 h-8 text-primary" />
                 </div>
-                <div className="performance-stat text-3xl sm:text-4xl md:text-6xl">+25%</div>
-                <CardTitle className="text-lg sm:text-xl">Performance Boost</CardTitle>
+                <div className="performance-stat">+25%</div>
+                <CardTitle>Performance Boost</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-muted-foreground text-sm sm:text-base">
+              <CardContent>
+                <p className="text-muted-foreground">
                   Our advanced cleaning systems restore peak efficiency, increasing energy production by up to 25%.
                 </p>
               </CardContent>
@@ -901,34 +899,34 @@ function App() {
 
             {/* ISO Certified */}
             <Card className="card-hover text-center">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <Award className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+              <CardHeader>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-lg sm:text-xl">ISO Certified Excellence</CardTitle>
+                <CardTitle>ISO Certified Excellence</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base">
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
                   Rigorous quality control and enterprise-grade solutions with proper ISO certification protocols.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="text-xs">ISO 9001</Badge>
-                  <Badge variant="secondary" className="text-xs">ISO 14001</Badge>
-                  <Badge variant="secondary" className="text-xs">ISO 45001</Badge>
+                  <Badge variant="secondary">ISO 9001</Badge>
+                  <Badge variant="secondary">ISO 14001</Badge>
+                  <Badge variant="secondary">ISO 45001</Badge>
                 </div>
               </CardContent>
             </Card>
 
             {/* Performance Reporting */}
             <Card className="card-hover text-center">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-secondary" />
+              <CardHeader>
+                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BarChart3 className="w-8 h-8 text-secondary" />
                 </div>
-                <CardTitle className="text-lg sm:text-xl">Detailed Performance Reporting</CardTitle>
+                <CardTitle>Detailed Performance Reporting</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-muted-foreground text-sm sm:text-base">
+              <CardContent>
+                <p className="text-muted-foreground">
                   Detailed performance reporting shows tangible ROI on your maintenance investment.
                 </p>
               </CardContent>
@@ -936,14 +934,14 @@ function App() {
 
             {/* Zero Risk */}
             <Card className="card-hover text-center">
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <Shield className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+              <CardHeader>
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle className="text-lg sm:text-xl">Zero Risk Guarantee</CardTitle>
+                <CardTitle>Zero Risk Guarantee</CardTitle>
               </CardHeader>
-              <CardContent className="pt-0">
-                <p className="text-muted-foreground text-sm sm:text-base">
+              <CardContent>
+                <p className="text-muted-foreground">
                   $20M insurance coverage with satisfaction guarantee for total peace of mind.
                 </p>
               </CardContent>
@@ -954,41 +952,41 @@ function App() {
 
       {/* Services Section */}
       <section id="services" className="section-padding">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Solar Maintenance for Your Specific Needs
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto px-2">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
               Select the path that matches your requirements for a customized maintenance solution 
               with dedicated expertise and specialized equipment.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Commercial O&M */}
             <Card className="card-hover overflow-hidden">
-              <div className="relative h-40 sm:h-48">
+              <div className="relative h-48">
                 <img 
                   src={commercialImage} 
                   alt="Commercial Solar Installation" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center">
-                    <Building className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                <div className="absolute top-4 left-4">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                    <Building className="w-6 h-6 text-primary" />
                   </div>
                 </div>
               </div>
-              <CardHeader className="pb-4">
+              <CardHeader>
                 <div className="text-sm text-primary font-medium">For commercial properties & solar farms</div>
-                <CardTitle className="text-lg sm:text-xl">Commercial O&M</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+                <CardTitle>Commercial O&M</CardTitle>
+                <CardDescription>
                   Comprehensive maintenance solutions for commercial properties, solar farms, industrial facilities, 
                   and utility-scale installations.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   className="w-full"
                   onClick={() => scrollToSection('commercial')}
@@ -1001,26 +999,26 @@ function App() {
 
             {/* Residential Systems */}
             <Card className="card-hover overflow-hidden">
-              <div className="relative h-40 sm:h-48">
+              <div className="relative h-48">
                 <img 
                   src={residentialServicesCardImage} 
                   alt="Professional Solar Technician Installing Residential Solar Panels on Rooftop" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center">
-                    <Home className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                <div className="absolute top-4 left-4">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                    <Home className="w-6 h-6 text-primary" />
                   </div>
                 </div>
               </div>
-              <CardHeader className="pb-4">
+              <CardHeader>
                 <div className="text-sm text-primary font-medium">For homeowners</div>
-                <CardTitle className="text-lg sm:text-xl">Residential Systems</CardTitle>
-                <CardDescription className="text-sm sm:text-base">
+                <CardTitle>Residential Systems</CardTitle>
+                <CardDescription>
                   Premium care for homeowners who want maximum returns from their rooftop solar investment.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent>
                 <Button 
                   className="w-full"
                   onClick={() => navigateToPage('residential-cleaning')}
@@ -1036,62 +1034,62 @@ function App() {
 
       {/* Commercial O&M Section */}
       <section id="commercial" className="section-padding">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Building className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Building className="w-6 h-6 text-primary" />
                 </div>
-                <Badge variant="secondary" className="text-xs sm:text-sm">Commercial O&M</Badge>
+                <Badge variant="secondary" className="text-sm">Commercial O&M</Badge>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Commercial Solar Operations & Maintenance
               </h2>
               
-              <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 Comprehensive maintenance solutions designed for commercial properties, office buildings, 
                 retail complexes, and multi-tenant facilities. Our enterprise-grade approach ensures 
                 maximum performance and ROI for your commercial solar investment.
               </p>
 
-              <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Scheduled Maintenance Programs</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">Scheduled Maintenance Programs</h4>
+                    <p className="text-muted-foreground">
                       Bi-annual to annual robotic cleaning with comprehensive inspections and detailed performance monitoring.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Performance Optimization</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">Performance Optimization</h4>
+                    <p className="text-muted-foreground">
                       Advanced monitoring systems track energy production and identify optimization opportunities.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Compliance & Reporting</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">Compliance & Reporting</h4>
+                    <p className="text-muted-foreground">
                       Comprehensive documentation for facility managers and property owners with ROI analysis.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="btn-primary text-sm sm:text-base"
+                  className="btn-primary"
                   onClick={() => scrollToSection('contact')}
                 >
                   Get Commercial Quote
@@ -1101,7 +1099,7 @@ function App() {
                   size="lg" 
                   variant="secondary"
                   onClick={() => setShowWhitepaperPopup(true)}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 border-0 text-sm sm:text-base"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 border-0"
                 >
                   Download Our Whitepaper
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -1109,16 +1107,16 @@ function App() {
               </div>
             </div>
             
-            <div className="relative mt-8 lg:mt-0">
+            <div className="relative">
               <img 
                 src={solarRobotImage} 
                 alt="Commercial Solar Operations & Maintenance - Robotic Cleaning Technology" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white p-3 sm:p-6 rounded-lg shadow-lg">
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">+22%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Average Efficiency Gain</div>
+                  <div className="text-2xl font-bold text-primary">+22%</div>
+                  <div className="text-sm text-muted-foreground">Average Efficiency Gain</div>
                 </div>
               </div>
             </div>
@@ -1128,76 +1126,76 @@ function App() {
 
       {/* Residential Services Section */}
       <section id="residential" className="section-padding bg-muted">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="order-2 lg:order-1 relative mt-8 lg:mt-0">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1 relative">
               <img 
                 src={residentialImage} 
                 alt="Professional Residential Solar Panel Cleaning - Robotic Cleaning System on Rooftop" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white p-3 sm:p-6 rounded-lg shadow-lg">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-primary">+18%</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Power Output Increase</div>
+                  <div className="text-2xl font-bold text-primary">+18%</div>
+                  <div className="text-sm text-muted-foreground">Power Output Increase</div>
                 </div>
               </div>
             </div>
             
             <div className="order-1 lg:order-2">
-              <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Home className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <Home className="w-6 h-6 text-primary" />
                 </div>
-                <Badge variant="secondary" className="text-xs sm:text-sm">Residential Services</Badge>
+                <Badge variant="secondary" className="text-sm">Residential Services</Badge>
               </div>
               
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Residential Solar Panel Maintenance
               </h2>
               
-              <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 Premium care for homeowners who want maximum returns from their rooftop solar investment. 
                 Our residential maintenance programs are designed to keep your system performing at peak 
                 efficiency year-round.
               </p>
 
-              <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+              <div className="space-y-6 mb-8">
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Professional Cleaning</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">Professional Cleaning</h4>
+                    <p className="text-muted-foreground">
                       Bi-annual professional cleaning with performance reporting and panel condition assessment.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">System Health Checks</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">System Health Checks</h4>
+                    <p className="text-muted-foreground">
                       Comprehensive inspections to identify potential issues before they impact performance.
                     </p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mt-1 flex-shrink-0" />
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold mb-1 sm:mb-2 text-sm sm:text-base">Quality Assurance</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">
+                    <h4 className="font-semibold mb-2">Quality Assurance</h4>
+                    <p className="text-muted-foreground">
                       Professional service standards with comprehensive documentation and detailed condition reports.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="btn-primary text-sm sm:text-base"
+                  className="btn-primary"
                   onClick={() => scrollToSection('contact')}
                 >
                   Get Residential Quote
@@ -1207,7 +1205,6 @@ function App() {
                   size="lg" 
                   variant="outline"
                   onClick={() => navigateToPage('residential-cleaning')}
-                  className="text-sm sm:text-base"
                 >
                   Learn More
                 </Button>
@@ -1219,59 +1216,59 @@ function App() {
 
       {/* Additional Services Section */}
       <section id="additional-services" className="section-padding">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Additional Solar Services
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto px-2">
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
               Comprehensive protection and diagnostic services to maximize your solar investment's 
               performance, safety, and longevity.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Bird Proofing */}
-            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
-              <div className="lg:w-1/2 w-full">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="lg:w-1/2">
                 <img 
                   src={birdProofingImage} 
                   alt="Solar Panel Bird Proofing" 
-                  className="w-full h-48 sm:h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
               </div>
-              <div className="lg:w-1/2 w-full">
-                <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <div className="lg:w-1/2">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Shield className="w-5 h-5 text-primary" />
                   </div>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Protection Service</Badge>
+                  <Badge variant="secondary" className="text-sm">Protection Service</Badge>
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Solar Bird Proofing</h3>
+                <h3 className="text-2xl font-bold mb-4">Solar Bird Proofing</h3>
                 
-                <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
+                <p className="text-muted-foreground mb-6">
                   Protect your solar investment from bird damage with professional-grade mesh installation. 
                   Prevent nesting, debris accumulation, and system damage while maintaining optimal airflow.
                 </p>
 
-                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Humane bird deterrent system</span>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Humane bird deterrent system</span>
                   </div>
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Prevents debris and nesting damage</span>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Prevents debris and nesting damage</span>
                   </div>
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Maintains system ventilation</span>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Maintains system ventilation</span>
                   </div>
                 </div>
 
                 <Button 
-                  className="btn-primary text-sm sm:text-base"
+                  className="btn-primary"
                   onClick={() => navigateToPage('solar-bird-proofing')}
                 >
                   Learn More
@@ -1281,43 +1278,44 @@ function App() {
             </div>
 
             {/* Thermal Imaging */}
-            <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 items-center">
-              <div className="lg:w-1/2 order-2 lg:order-1 w-full">
-                <div className="flex items-center space-x-3 mb-3 sm:mb-4">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Gauge className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="lg:w-1/2 order-2 lg:order-1">
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Gauge className="w-5 h-5 text-primary" />
                   </div>
-                  <Badge variant="secondary" className="text-xs sm:text-sm">Diagnostic Service</Badge>
+                  <Badge variant="secondary" className="text-sm">Diagnostic Service</Badge>
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Thermal Imaging Inspection</h3>
+                <h3 className="text-2xl font-bold mb-4">Thermal Imaging Inspection</h3>
                 
-                <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
+                <p className="text-muted-foreground mb-6">
                   Advanced infrared thermal imaging to detect hot spots, faulty panels, and electrical issues 
                   before they become costly problems. Comprehensive system health assessment.
                 </p>
 
-                <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Detects hidden electrical faults</span>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Detects hidden electrical faults</span>
                   </div>
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Identifies underperforming panels</span>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Identifies underperforming panels</span>
                   </div>
-                  <div className="flex items-start space-x-2 sm:space-x-3">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-1 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm">Prevents system failures</span>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <span className="text-sm">Prevents system failures</span>
                   </div>
                 </div>
 
+
               </div>
-              <div className="lg:w-1/2 order-1 lg:order-2 w-full">
+              <div className="lg:w-1/2 order-1 lg:order-2">
                 <img 
                   src={thermalImagingImage} 
                   alt="Thermal Imaging Solar Inspection" 
-                  className="w-full h-48 sm:h-64 object-cover rounded-lg shadow-lg"
+                  className="w-full h-64 object-cover rounded-lg shadow-lg"
                 />
               </div>
             </div>
@@ -1327,35 +1325,35 @@ function App() {
 
       {/* Performance Results Section */}
       <section className="section-padding bg-muted">
-        <div className="container-max px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Proven Results</h2>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto px-2">
+        <div className="container-max">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Proven Results</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
               Our maintenance solutions deliver measurable improvements to your solar system's performance. 
               See the real-world results our clients experience:
             </p>
           </div>
 
           {/* Performance Analytics */}
-          <div className="mb-12 sm:mb-16">
-            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-center mb-6 sm:mb-8 px-2">
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center mb-8">
               Average performance improvement after professional maintenance
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="performance-stat mb-2 text-3xl sm:text-4xl md:text-6xl">+22%</div>
-                <h4 className="text-base sm:text-lg font-semibold mb-2">Commercial</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">Office buildings and retail complexes</p>
+                <div className="performance-stat mb-2">+22%</div>
+                <h4 className="text-lg font-semibold mb-2">Commercial</h4>
+                <p className="text-muted-foreground">Office buildings and retail complexes</p>
               </div>
               <div className="text-center">
-                <div className="performance-stat mb-2 text-3xl sm:text-4xl md:text-6xl">+18%</div>
-                <h4 className="text-base sm:text-lg font-semibold mb-2">Residential</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">Rooftop solar systems</p>
+                <div className="performance-stat mb-2">+18%</div>
+                <h4 className="text-lg font-semibold mb-2">Residential</h4>
+                <p className="text-muted-foreground">Rooftop solar systems</p>
               </div>
-              <div className="text-center sm:col-span-2 md:col-span-1">
-                <div className="performance-stat mb-2 text-3xl sm:text-4xl md:text-6xl">+25%</div>
-                <h4 className="text-base sm:text-lg font-semibold mb-2">Solar Farms</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">Utility-scale installations</p>
+              <div className="text-center">
+                <div className="performance-stat mb-2">+25%</div>
+                <h4 className="text-lg font-semibold mb-2">Solar Farms</h4>
+                <p className="text-muted-foreground">Utility-scale installations</p>
               </div>
             </div>
           </div>
@@ -2009,9 +2007,9 @@ function App() {
             {/* Services */}
             <div>
               <h3 className="font-semibold mb-4">Services</h3>
-              <ul className="space-y-1 text-sm text-secondary-foreground/80">
+              <ul className="space-y-2 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Solar Cleaning</button></li>
+                <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left">Residential Services</button></li>
                 <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left">Solar Bird Proofing</button></li>
               </ul>
             </div>
