@@ -1,6 +1,3 @@
-import fs from 'fs/promises'
-import path from 'path'
-
 export default async function handler(req, res) {
   // Set CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -69,30 +66,8 @@ export default async function handler(req, res) {
       source: 'commercial_om_whitepaper'
     }
 
-    // Store lead data (you can modify this to integrate with your CRM)
-    const leadsFile = path.join(process.cwd(), 'leads.json')
-    
-    try {
-      // Read existing leads or create empty array
-      let leads = []
-      try {
-        const existingData = await fs.readFile(leadsFile, 'utf8')
-        leads = JSON.parse(existingData)
-      } catch (error) {
-        // File doesn't exist yet, start with empty array
-        leads = []
-      }
-
-      // Add new lead
-      leads.push(leadData)
-
-      // Write back to file
-      await fs.writeFile(leadsFile, JSON.stringify(leads, null, 2))
-      
-    } catch (fileError) {
-      console.error('Error saving lead data:', fileError)
-      // Continue even if file save fails - don't block the user
-    }
+    // TODO: Integrate with external service (Zapier, CRM, etc.)
+    // File system operations removed - use external service instead
 
     // Log lead data for monitoring (you can integrate with your CRM API here)
     console.log('New Whitepaper Lead:', {
