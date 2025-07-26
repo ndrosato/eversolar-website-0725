@@ -231,6 +231,10 @@ function App() {
     e.preventDefault()
     setROIIsSubmitting(true)
     
+    // Open ROI calculator in new tab IMMEDIATELY (before async operations)
+    // This ensures mobile browsers recognize it as direct user interaction
+    const calculatorWindow = window.open('https://eversolarcalculator.com.au/', '_blank')
+    
     console.log('🚀 === ROI CALCULATOR FORM SUBMISSION START ===')
     console.log('📝 ROI Form data:', roiFormData)
     
@@ -279,9 +283,6 @@ function App() {
 
       console.log('✅ ROI form data sent to Zapier!')
 
-      // Open ROI calculator in new tab
-      window.open('https://eversolarcalculator.com.au/', '_blank')
-
       // Show success message
       setROIShowSuccess(true)
       
@@ -294,9 +295,6 @@ function App() {
 
     } catch (error) {
       console.error('❌ ERROR: Failed to send ROI form to Zapier:', error)
-      
-      // Open ROI calculator in new tab even if webhook fails
-      window.open('https://eversolarcalculator.com.au/', '_blank')
       
       // Still show success message to user even if webhook fails
       setROIShowSuccess(true)
