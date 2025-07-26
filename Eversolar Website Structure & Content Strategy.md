@@ -31,7 +31,7 @@ The homepage hero section will immediately establish Eversolar's unique position
 
 The subheading will reinforce this positioning with "Protect your solar investment with robotic precision and certified performance results." This statement combines three key value propositions: investment protection, advanced technology, and guaranteed outcomes.
 
-Below the main messaging, three trust indicators will be prominently displayed: "Fully Insured – $20M Public Liability," "WorkSafe & OH&S Compliant," and "Output-Performance Optimized – Guaranteed." These elements address common customer concerns about insurance coverage, safety compliance, and performance guarantees.
+Below the main messaging, three trust indicators will be prominently displayed: "Fully Insured – $20M Public Liability," "SafeWork & OH&S Compliant," and "Output-Performance Optimized – Guaranteed." These elements address common customer concerns about insurance coverage, safety compliance, and performance guarantees.
 
 The hero section will feature two primary calls-to-action: "Get a Quote" as the primary action for users ready to engage, and "See How It Works" for users seeking more information about the process. The background will showcase a high-quality image of solar panels with a subtle overlay to ensure text readability while maintaining visual impact.
 
@@ -41,7 +41,7 @@ Following the hero section, a dedicated value propositions area will highlight E
 
 The first value proposition focuses on performance improvement, featuring the statistic "+25% Performance Boost" with supporting text explaining how advanced cleaning systems restore peak efficiency and increase energy production. This section will include an icon representing energy or performance improvement.
 
-The second value proposition emphasizes quality and certification, highlighting "ISO Certified Excellence" with text describing rigorous quality control and enterprise-grade solutions with proper certifications. This builds trust through third-party validation and industry standards compliance.
+The second value proposition emphasizes quality and certification, highlighting "Operational Excellence" with text describing rigorous quality control and enterprise-grade solutions with proper certifications. This builds trust through third-party validation and industry standards compliance.
 
 The third value proposition addresses transparency and accountability with "Detailed Performance Reporting" that shows tangible ROI on maintenance investment. This appeals to data-driven decision-makers who need to justify maintenance expenses with measurable results.
 

@@ -148,15 +148,23 @@
   }
   
   .footer-bg * {
-    color: white !important;
+    color: #FFFFFF !important;
   }
   
   .footer-bg *[class*="text-"] {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: #FFFFFF !important;
   }
   
   .footer-bg h3, .footer-bg h4 {
-    color: white !important;
+    color: #FFFFFF !important;
+  }
+  
+  .footer-bg a, .footer-bg button {
+    color: #FFFFFF !important;
+  }
+  
+  .footer-bg svg {
+    color: #FFFFFF !important;
   }
   
   .text-brand-green {
@@ -172,12 +180,20 @@
   }
   
   .bg-dark-blue {
-    background-color: #004396;
-  }
-  
-  .text-dark-blue {
-    color: #004396;
-  }
+  background-color: #004396;
+}
+
+.text-dark-blue {
+  color: #004396;
+}
+
+.bg-roi-green {
+  background-color: #2DAE29;
+}
+
+.bg-roi-green:hover {
+  background-color: #239320;
+}
   
   /* Mobile-specific fixes */
   @media (max-width: 767px) {

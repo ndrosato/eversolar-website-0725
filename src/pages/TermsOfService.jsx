@@ -66,7 +66,7 @@ const TermsOfService = ({ navigateToPage, scrollToSection }) => {
                       onClick={() => navigateToPage('solar-bird-proofing')}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ const TermsOfService = ({ navigateToPage, scrollToSection }) => {
                         }}
                         className="block text-left text-gray-600 hover:text-primary transition-colors py-2"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                     </div>
                   )}
@@ -249,7 +249,7 @@ const TermsOfService = ({ navigateToPage, scrollToSection }) => {
                 <ul className="list-disc ml-6 text-gray-600 space-y-2">
                   <li>Commercial solar operations and maintenance (O&M)</li>
                   <li>Residential solar panel cleaning and maintenance</li>
-                  <li>Solar bird proofing and protection services</li>
+                  <li>Bird proofing and protection services</li>
                   <li>Thermal imaging inspections and diagnostics</li>
                   <li>Performance monitoring and optimization</li>
                   <li>Related consulting and advisory services</li>

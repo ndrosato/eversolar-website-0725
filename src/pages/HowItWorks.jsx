@@ -138,7 +138,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
                       onClick={() => navigateToPage('solar-bird-proofing')}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
                   </div>
                 )}
@@ -243,7 +243,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
                         onClick={() => navigateToPage('solar-bird-proofing')}
                         className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                     </div>
                   )}
@@ -473,16 +473,33 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
                  alt="Before and After Solar Panel Cleaning Comparison" 
                  className="w-full h-auto rounded-2xl shadow-2xl"
                />
-              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-white p-3 md:p-8 rounded-xl md:rounded-2xl shadow-2xl border">
+              {/* Overlays for md+ screens */}
+              <div className="hidden md:block absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white p-3 md:p-5 rounded-lg md:rounded-xl shadow-lg border">
                 <div className="text-center">
-                  <div className="text-2xl md:text-4xl font-bold text-primary mb-1 md:mb-2">25%</div>
-                  <p className="text-xs md:text-sm text-muted-foreground font-medium">Average Performance<br />Increase</p>
+                  <div className="text-xl md:text-2xl font-bold text-primary mb-1">25%</div>
+                  <p className="text-xs text-muted-foreground font-medium">Performance<br />Increase</p>
                 </div>
               </div>
-              <div className="absolute -top-4 -left-4 md:-top-8 md:-left-8 bg-primary text-white p-3 md:p-6 rounded-xl md:rounded-2xl shadow-xl">
+              <div className="hidden md:block absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-primary text-white p-3 md:p-4 rounded-lg md:rounded-xl shadow-lg">
                 <div className="text-center">
-                  <Shield className="w-5 h-5 md:w-8 md:h-8 mx-auto mb-1 md:mb-2" />
-                  <p className="text-xs md:text-sm font-medium">$20M Insurance<br />Protected</p>
+                  <Shield className="w-4 h-4 md:w-5 md:h-5 mx-auto mb-1" />
+                  <p className="text-xs font-medium">$20M Insurance<br />Protected</p>
+                </div>
+              </div>
+              
+              {/* Mobile tiles below image */}
+              <div className="md:hidden mt-6 grid grid-cols-2 gap-4">
+                <div className="bg-primary text-white p-4 rounded-xl shadow-xl">
+                  <div className="text-center">
+                    <Shield className="w-6 h-6 mx-auto mb-2" />
+                    <p className="text-sm font-medium">$20M Insurance<br />Protected</p>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-xl shadow-2xl border">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary mb-2">25%</div>
+                    <p className="text-sm text-muted-foreground font-medium">Average Performance<br />Increase</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -521,7 +538,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
                 <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
                   <CheckCircle className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">WorkSafe Certified</h3>
+                <h3 className="text-2xl font-bold mb-4">SafeWork Certified</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Fully certified safety protocols ensure compliance with all Australian workplace health and safety standards.
                 </p>
@@ -585,7 +602,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold mb-2">100%</div>
-              <div className="text-sm opacity-80">WorkSafe Compliant</div>
+                              <div className="text-sm opacity-80">SafeWork Compliant</div>
             </div>
           </div>
         </div>
@@ -623,7 +640,7 @@ const HowItWorks = ({ scrollToSection, navigateToPage }) => {
               <ul className="space-y-1 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
                 <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Bird Proofing</button></li>
               </ul>
             </div>
 

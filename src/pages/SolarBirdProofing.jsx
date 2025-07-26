@@ -138,7 +138,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
                       onClick={() => navigateToPage('solar-bird-proofing')}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
                   </div>
                 )}
@@ -252,7 +252,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
                         }}
                         className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                     </div>
                   )}
@@ -313,7 +313,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
             
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
               Professional{' '}
-              <span className="text-primary">Solar Bird Proofing</span>
+              <span className="text-primary">Bird Proofing</span>
             </h1>
             
             <p className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-2xl mb-8 sm:mb-12 lg:mb-16 text-gray-200 max-w-4xl mx-auto leading-relaxed px-2">
@@ -462,7 +462,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
             <div>
               <img 
                 src={solarBirdProofingInstallationImage} 
-                alt="Professional solar bird proofing installation process"
+                alt="Professional bird proofing installation process"
                 className="rounded-2xl shadow-2xl w-full"
               />
             </div>
@@ -862,7 +862,7 @@ const SolarBirdProofing = ({ scrollToSection, navigateToPage }) => {
               <ul className="space-y-1 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
                 <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Bird Proofing</button></li>
               </ul>
             </div>
 

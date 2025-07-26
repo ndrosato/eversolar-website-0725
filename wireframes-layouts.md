@@ -95,7 +95,7 @@ The homepage hero section will create immediate impact with compelling messaging
 **Trust Indicators (Below CTAs)**
 - Three horizontal badges with icons and text
 - "Fully Insured – $20M Public Liability"
-- "WorkSafe & OH&S Compliant" 
+- "SafeWork & OH&S Compliant" 
 - "Output-Performance Optimized – Guaranteed"
 - Badge styling: Semi-transparent white background, green icons
 
@@ -119,7 +119,7 @@ Each value proposition will be presented as a card with consistent styling and c
 
 **Card 2: Quality Certification**
 - Icon: Shield with checkmark in green (#4CAF50)
-- Title: "ISO Certified Excellence"
+- Title: "Operational Excellence"
 - Description: "Rigorous quality control and enterprise-grade solutions with proper certifications"
 - Certification badges: ISO 9001, 14001, 45001
 
@@ -227,7 +227,7 @@ This section will explain Eversolar's systematic approach to solar maintenance, 
 
 **ISO Certification Highlight**
 - Badge: ISO 9001 certification logo
-- Text: "Every maintenance procedure follows our ISO 9001 certified quality management system"
+- Text: "Our approach is guided by the ISO 9001 standard for quality management best practices"
 - CTA: "Learn More About Our Process" link
 
 **Six-Step Process (Three-Column Grid, Two Rows)**

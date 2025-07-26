@@ -66,7 +66,7 @@ const PrivacyPolicy = ({ navigateToPage, scrollToSection }) => {
                       onClick={() => navigateToPage('solar-bird-proofing')}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ const PrivacyPolicy = ({ navigateToPage, scrollToSection }) => {
                         }}
                         className="block text-left text-gray-600 hover:text-primary transition-colors py-2"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                     </div>
                   )}

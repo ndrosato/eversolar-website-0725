@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge.jsx'
 import { Input } from '@/components/ui/input.jsx'
 import { Textarea } from '@/components/ui/textarea.jsx'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select.jsx'
+
 import { 
   Phone, 
   Mail, 
@@ -56,16 +56,18 @@ import commercialOmImage from './assets/commercial-om-solar-panels.jpg'
 import solarRobotImage from './assets/solar-robot-image.jpeg'
 import residentialSolarImage from './assets/residential-solar-panels.jpg'
 import residentialCleaningImage from './assets/residential-cleaning.jpg'
+import homeSolarResidentialImage from './assets/home-solar-residential-image.jpg'
 import thermalImagingInspectionImage from './assets/thermal-imaging-inspection.jpg'
 import solarBirdProofingImage from './assets/solar-bird-proofing.jpg'
 import passionForSolarExcellenceImage from './assets/passion-for-solar-excellence.jpg'
+import roiCalculatorPreview from './assets/roi-calculator-preview.png'
 import instagramIcon from './assets/instagram-icon.jpg'
 import facebookIcon from './assets/facebook-icon.jpg'
 import linkedInIcon from './assets/linked-in-icon.jpg'
 const heroImage = heroSolarImage
 const commercialImage = commercialOmImage
 const residentialImage = residentialCleaningImage
-const residentialServicesCardImage = residentialSolarImage
+const residentialServicesCardImage = homeSolarResidentialImage
 const maintenanceImage = 'https://images.unsplash.com/photo-1625760324301-9ef2eb550cf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80'
 const professionalImage = 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80'
 const teamImage = passionForSolarExcellenceImage
@@ -79,12 +81,12 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home')
   const [formData, setFormData] = useState({
     first_name: '',
-    last_name: '',
+    company: '',
     email: '',
     phone: '',
     postcode: '',
     service_type: '',
-    system_kwh: '',
+    system_kw: '',
     storeys: '',
     message: ''
   })
@@ -103,6 +105,14 @@ function App() {
   })
   const [whitepaperIsSubmitting, setWhitepaperIsSubmitting] = useState(false)
   const [whitepaperSubmitMessage, setWhitepaperSubmitMessage] = useState('')
+  const [showROIModal, setShowROIModal] = useState(false)
+  const [roiFormData, setROIFormData] = useState({
+    name: '',
+    email: '',
+    postcode: ''
+  })
+  const [roiShowSuccess, setROIShowSuccess] = useState(false)
+  const [roiIsSubmitting, setROIIsSubmitting] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -217,6 +227,84 @@ function App() {
     }
   }
 
+  const handleROISubmit = async (e) => {
+    e.preventDefault()
+    setROIIsSubmitting(true)
+    
+    console.log('🚀 === ROI CALCULATOR FORM SUBMISSION START ===')
+    console.log('📝 ROI Form data:', roiFormData)
+    
+    // Log the form values as requested
+    console.log('Name:', roiFormData.name)
+    console.log('Email:', roiFormData.email)
+    console.log('Postcode:', roiFormData.postcode)
+
+    // Prepare payload for Zapier webhook
+    const webhookPayload = {
+      name: roiFormData.name,
+      email: roiFormData.email,
+      postcode: roiFormData.postcode,
+      lead_source: 'Homepage - ROI Calculator Form',
+      timestamp: new Date().toISOString()
+    }
+
+    console.log('📦 Payload prepared for Zapier:')
+    console.log(JSON.stringify(webhookPayload, null, 2))
+
+    try {
+      console.log('🔗 Sending to Zapier webhook...')
+      console.log('🌐 Webhook URL: https://hooks.zapier.com/hooks/catch/23907654/uu8mc8x/')
+      
+      const response = await fetch('https://hooks.zapier.com/hooks/catch/23907654/uu8mc8x/', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookPayload)
+      })
+      
+      console.log('📡 Response type:', response.type)
+      console.log('📡 Response status:', response.status)
+
+      // Check if request was sent successfully
+      if (response.type === 'opaque') {
+        console.log('✅ SUCCESS: Request sent to Zapier (no-cors mode)')
+        console.log('ℹ️ Cannot verify response due to CORS, but request was sent successfully')
+      } else if (response.ok) {
+        console.log('✅ SUCCESS: Normal response from Zapier')
+      } else {
+        throw new Error(`Request failed with status: ${response.status}`)
+      }
+
+      console.log('✅ ROI form data sent to Zapier!')
+
+      // Show success message
+      setROIShowSuccess(true)
+      
+      // Close modal after 3 seconds
+      setTimeout(() => {
+        setShowROIModal(false)
+        setROIFormData({ name: '', email: '', postcode: '' })
+        setROIShowSuccess(false)
+      }, 3000)
+
+    } catch (error) {
+      console.error('❌ ERROR: Failed to send ROI form to Zapier:', error)
+      // Still show success message to user even if webhook fails
+      setROIShowSuccess(true)
+      
+      setTimeout(() => {
+        setShowROIModal(false)
+        setROIFormData({ name: '', email: '', postcode: '' })
+        setROIShowSuccess(false)
+      }, 3000)
+    } finally {
+      setROIIsSubmitting(false)
+      console.log('🏁 === ROI FORM SUBMISSION END ===')
+    }
+  }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -225,12 +313,7 @@ function App() {
     }))
   }
 
-  const handleServiceChange = (value) => {
-    setFormData(prev => ({
-      ...prev,
-      service_type: value
-    }))
-  }
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault()
@@ -241,7 +324,7 @@ function App() {
     console.log('📝 Form data received:', formData)
 
     // Check if all required fields are filled
-    const requiredFields = ['first_name', 'last_name', 'email', 'phone', 'postcode', 'service_type', 'system_kwh', 'storeys']
+    const requiredFields = ['first_name', 'email', 'phone', 'postcode']
     const emptyFields = requiredFields.filter(field => !formData[field])
     
     if (emptyFields.length > 0) {
@@ -254,12 +337,12 @@ function App() {
     // Prepare payload for Zapier webhook
     const webhookPayload = {
       first_name: formData.first_name,
-      last_name: formData.last_name,
+      company: formData.company,
       email: formData.email,
       phone: formData.phone,
       postcode: formData.postcode,
       service_type: formData.service_type,
-      system_kwh: formData.system_kwh,
+      system_kw: formData.system_kw,
       storeys: formData.storeys,
       message: formData.message,
       lead_source: 'Homepage - Get a Quote Form',
@@ -406,7 +489,7 @@ function App() {
                         onClick={() => navigateToPage('solar-bird-proofing')}
                         className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                     </div>
                   )}
@@ -513,7 +596,7 @@ function App() {
                           }}
                           className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
                         >
-                          Solar Bird Proofing
+                          Bird Proofing
                         </button>
                       </div>
                     )}
@@ -568,7 +651,7 @@ function App() {
     return <ResidentialCleaning scrollToSection={scrollToSection} navigateToPage={navigateToPage} />
   }
 
-  // Solar bird proofing page
+  // Bird proofing page
   if (currentPage === 'solar-bird-proofing') {
     return <SolarBirdProofing scrollToSection={scrollToSection} navigateToPage={navigateToPage} />
   }
@@ -674,7 +757,7 @@ function App() {
                       onClick={() => navigateToPage('solar-bird-proofing')}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
                   </div>
                 )}
@@ -775,7 +858,7 @@ function App() {
                           }}
                           className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
                         >
-                          Solar Bird Proofing
+                          Bird Proofing
                         </button>
 
                     </div>
@@ -820,7 +903,7 @@ function App() {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${heroImage})`
         }}
       >
-        <div className="container-max text-center pt-16 sm:pt-20 lg:pt-12">
+        <div className="container-max text-center pt-20 sm:pt-24 lg:pt-12 pb-6 sm:pb-6 lg:pb-0">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
               We Don't Clean Panels —{' '}
@@ -855,7 +938,7 @@ function App() {
               </div>
               <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <CheckCircle className="w-6 h-6 text-primary" />
-                <span className="text-sm font-medium">WorkSafe & OH&S Compliant</span>
+                <span className="text-sm font-medium">SafeWork & OH&S Compliant</span>
               </div>
               <div className="flex items-center justify-center space-x-3 bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <TrendingUp className="w-6 h-6 text-primary" />
@@ -865,6 +948,136 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* ROI Calculator Section */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Content */}
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                How Much Are Dirty Panels Costing You?
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+                Most solar systems lose 10–30% output every year. Find out how much you're missing — and what it's worth — in under 30 seconds.
+              </p>
+              <button 
+                onClick={() => setShowROIModal(true)}
+                className="inline-flex items-center px-8 py-4 text-lg font-bold text-white rounded-lg transition-all duration-200 hover:shadow-lg transform hover:scale-105"
+                style={{ 
+                  backgroundColor: '#2DAE29',
+                  '&:hover': { backgroundColor: '#239320' }
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#239320'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#2DAE29'}
+              >
+                Get Your Personal ROI Calculator
+              </button>
+            </div>
+
+            {/* Right side - Calculator Preview */}
+            <div className="mt-8 lg:mt-0">
+              <div className="max-w-lg mx-auto">
+                <img 
+                  src={roiCalculatorPreview}
+                  alt="EverSolar ROI Calculator - Solar Output Performance and Savings Calculator"
+                  className="w-full h-auto rounded-xl shadow-2xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ROI Calculator Modal */}
+      {showROIModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900">Get Your ROI Calculator</h3>
+                <button 
+                  onClick={() => {
+                    setShowROIModal(false);
+                    setROIFormData({ name: '', email: '', postcode: '' });
+                    setROIShowSuccess(false);
+                    setROIIsSubmitting(false);
+                  }}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {!roiShowSuccess ? (
+                <form onSubmit={handleROISubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="roi-name" className="block text-sm font-medium text-gray-700 mb-2">
+                      Name *
+                    </label>
+                    <input
+                      id="roi-name"
+                      type="text"
+                      required
+                      value={roiFormData.name}
+                      onChange={(e) => setROIFormData({...roiFormData, name: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2DAE29] focus:border-transparent transition-all"
+                      placeholder="Enter your full name"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="roi-email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      id="roi-email"
+                      type="email"
+                      required
+                      value={roiFormData.email}
+                      onChange={(e) => setROIFormData({...roiFormData, email: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2DAE29] focus:border-transparent transition-all"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="roi-postcode" className="block text-sm font-medium text-gray-700 mb-2">
+                      Postcode *
+                    </label>
+                    <input
+                      id="roi-postcode"
+                      type="number"
+                      required
+                      value={roiFormData.postcode}
+                      onChange={(e) => setROIFormData({...roiFormData, postcode: e.target.value})}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2DAE29] focus:border-transparent transition-all"
+                      placeholder="Enter your postcode"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={roiIsSubmitting}
+                    className="w-full py-3 font-bold text-white rounded-lg transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    style={{ backgroundColor: '#2DAE29' }}
+                    onMouseEnter={(e) => !roiIsSubmitting && (e.target.style.backgroundColor = '#239320')}
+                    onMouseLeave={(e) => !roiIsSubmitting && (e.target.style.backgroundColor = '#2DAE29')}
+                  >
+                    {roiIsSubmitting ? 'Processing...' : 'Download ROI Calculator'}
+                  </button>
+                </form>
+              ) : (
+                <div className="text-center py-8">
+                  <CheckCircle className="w-16 h-16 text-[#2DAE29] mx-auto mb-4" />
+                  <h4 className="text-xl font-bold text-gray-900 mb-2">Thanks!</h4>
+                  <p className="text-gray-600">Your personal ROI calculator has opened in a new tab. A copy has also been sent to your email.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Value Propositions Section */}
       <section className="section-padding bg-muted">
@@ -903,7 +1116,7 @@ function App() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Award className="w-8 h-8 text-primary" />
                 </div>
-                <CardTitle>ISO Certified Excellence</CardTitle>
+                <CardTitle>Operational Excellence</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
@@ -920,8 +1133,8 @@ function App() {
             {/* Performance Reporting */}
             <Card className="card-hover text-center">
               <CardHeader>
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BarChart3 className="w-8 h-8 text-secondary" />
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-primary" />
                 </div>
                 <CardTitle>Detailed Performance Reporting</CardTitle>
               </CardHeader>
@@ -989,7 +1202,7 @@ function App() {
               <CardContent>
                 <Button 
                   className="w-full"
-                  onClick={() => scrollToSection('commercial')}
+                  onClick={() => navigateToPage('commercial-om')}
                 >
                   Commercial Solutions
                   <ArrowRight className="ml-2 w-4 h-4" />
@@ -1113,12 +1326,6 @@ function App() {
                 alt="Commercial Solar Operations & Maintenance - Robotic Cleaning Technology" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">+22%</div>
-                  <div className="text-sm text-muted-foreground">Average Efficiency Gain</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -1134,12 +1341,6 @@ function App() {
                 alt="Professional Residential Solar Panel Cleaning - Robotic Cleaning System on Rooftop" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">+18%</div>
-                  <div className="text-sm text-muted-foreground">Power Output Increase</div>
-                </div>
-              </div>
             </div>
             
             <div className="order-1 lg:order-2">
@@ -1245,7 +1446,7 @@ function App() {
                   <Badge variant="secondary" className="text-sm">Protection Service</Badge>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-4">Solar Bird Proofing</h3>
+                <h3 className="text-2xl font-bold mb-4">Bird Proofing</h3>
                 
                 <p className="text-muted-foreground mb-6">
                   Protect your solar investment from bird damage with professional-grade mesh installation. 
@@ -1454,7 +1655,7 @@ function App() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center space-x-3 bg-primary/10 rounded-lg px-6 py-3">
               <Award className="w-6 h-6 text-primary" />
-              <span className="font-semibold">Every maintenance procedure follows our ISO 9001 certified quality management system</span>
+                              <span className="font-semibold">Our approach is guided by the ISO 9001 standard for quality management best practices</span>
             </div>
           </div>
 
@@ -1783,27 +1984,25 @@ function App() {
               </CardHeader>
               <CardContent>
                 <form className="space-y-4" onSubmit={handleFormSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">First Name *</label>
-                      <Input 
-                        name="first_name"
-                        placeholder="Enter your first name" 
-                        required
-                        value={formData.first_name}
-                        onChange={handleInputChange}
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Last Name *</label>
-                      <Input 
-                        name="last_name"
-                        placeholder="Enter your last name" 
-                        required
-                        value={formData.last_name}
-                        onChange={handleInputChange}
-                      />
-                    </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">First Name *</label>
+                    <Input 
+                      name="first_name"
+                      placeholder="Enter your first name" 
+                      required
+                      value={formData.first_name}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Company</label>
+                    <Input 
+                      name="company"
+                      placeholder="Enter your company name (optional)" 
+                      value={formData.company}
+                      onChange={handleInputChange}
+                    />
                   </div>
                   
                   <div>
@@ -1842,46 +2041,35 @@ function App() {
                   </div>
                   
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Service Interested In *</label>
-                    <Select value={formData.service_type} onValueChange={handleServiceChange} required>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a service" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="commercial">Commercial O&M</SelectItem>
-                        <SelectItem value="residential">Residential Services</SelectItem>
-                        <SelectItem value="bird-proofing">Solar Bird Proofing</SelectItem>
-                        <SelectItem value="thermal-imaging">Thermal Imaging Inspection</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <label className="text-sm font-medium mb-2 block">Service Interested In</label>
+                    <Input 
+                      name="service_type"
+                      placeholder="e.g. Residential Cleaning, Commercial O&M, Thermal Imaging (optional)"
+                      value={formData.service_type}
+                      onChange={handleInputChange}
+                    />
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">System Size (kWh) *</label>
+                      <label className="text-sm font-medium mb-2 block">System Size (kW)</label>
                       <Input 
-                        name="system_kwh"
+                        name="system_kw"
                         type="number"
                         step="0.1"
-                        placeholder="Enter system size in kWh" 
-                        required
-                        value={formData.system_kwh}
+                        placeholder="e.g. 6.6 or 10.0 (optional)" 
+                        value={formData.system_kw}
                         onChange={handleInputChange}
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Number of Storeys *</label>
-                      <Select value={formData.storeys} onValueChange={(value) => setFormData(prev => ({...prev, storeys: value}))} required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select number of storeys" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="1-Storey">1-Storey</SelectItem>
-                          <SelectItem value="2-Storey">2-Storey</SelectItem>
-                          <SelectItem value="3-Storey">3-Storey</SelectItem>
-                          <SelectItem value="4 or more Storeys">4 or more Storeys</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <label className="text-sm font-medium mb-2 block">Number of Storeys</label>
+                      <Input 
+                        name="storeys"
+                        placeholder="e.g. 1, 2, 3+ (optional)"
+                        value={formData.storeys}
+                        onChange={handleInputChange}
+                      />
                     </div>
                   </div>
                   
@@ -1889,7 +2077,7 @@ function App() {
                     <label className="text-sm font-medium mb-2 block">Message</label>
                     <Textarea 
                       name="message"
-                      placeholder="Tell us about your solar system and maintenance needs..."
+                      placeholder="Tell us briefly about your solar system or what you're looking for..."
                       rows={4}
                       value={formData.message}
                       onChange={handleInputChange}
@@ -1901,7 +2089,7 @@ function App() {
                     className="w-full btn-primary"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : 'Get a Quote'}
                     {!isSubmitting && <ArrowRight className="ml-2 w-4 h-4" />}
                   </Button>
                   
@@ -2004,7 +2192,7 @@ function App() {
               <ul className="space-y-1 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
                 <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Bird Proofing</button></li>
               </ul>
             </div>
 

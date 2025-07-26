@@ -38,6 +38,7 @@ import commercialOmHeroImage from '../assets/commercial-om-hero-image.jpg'
 import commercialOmImage from '../assets/commercial-om-solar-panels.jpg'
 import solarRobotImage from '../assets/solar-robot-image.jpeg'
 import thermalImagingImage from '../assets/thermal-imaging-inspection.jpg'
+import safetyAndComplianceImage from '../assets/safety-and-compliance.jpg'
 import eversolarLogoWhite from '../assets/eversolar-logo-white.jpg'
 import instagramIcon from '../assets/instagram-icon.jpg'
 import facebookIcon from '../assets/facebook-icon.jpg'
@@ -107,9 +108,9 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
 
     try {
       console.log('🔗 Sending directly to Zapier webhook...')
-      console.log('🌐 Webhook URL: https://hooks.zapier.com/hooks/catch/23907654/uu6tab5/')
+      console.log('🌐 Webhook URL: https://hooks.zapier.com/hooks/catch/23907654/uu8dwl8/')
       
-      const response = await fetch('https://hooks.zapier.com/hooks/catch/23907654/uu6tab5/', {
+      const response = await fetch('https://hooks.zapier.com/hooks/catch/23907654/uu8dwl8/', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -567,12 +568,6 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
                 alt="Professional Solar Panel Cleaning Equipment" 
                 className="w-full h-auto rounded-xl shadow-lg"
               />
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">25%</div>
-                  <div className="text-sm text-muted-foreground">Average Performance Increase</div>
-                </div>
-              </div>
             </div>
             
             <div>
@@ -716,7 +711,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
                     <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                       <CheckCircle className="w-5 h-5 text-primary" />
                     </div>
-                    <span className="font-medium">WorkSafe Compliant</span>
+                    <span className="font-medium">SafeWork Compliant</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
@@ -751,16 +746,10 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
             
             <div className="relative">
               <img 
-                src={thermalImagingImage} 
+                src={safetyAndComplianceImage} 
                 alt="Professional Safety Equipment for Solar Maintenance" 
                 className="w-full h-auto rounded-xl shadow-lg"
               />
-              <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-lg">
-                <div className="flex items-center space-x-2">
-                  <Shield className="w-6 h-6 text-primary" />
-                  <span className="font-semibold">Safety Certified</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -843,7 +832,7 @@ const CommercialOM = ({ scrollToSection, navigateToPage }) => {
               <ul className="space-y-1 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
                 <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Services</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Bird Proofing</button></li>
               </ul>
             </div>
 

@@ -112,9 +112,9 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
 
     try {
       console.log('🔗 Sending to Zapier webhook...')
-      console.log('🌐 Webhook URL: https://hooks.zapier.com/hooks/catch/23907654/uu6qkth/')
+      console.log('🌐 Webhook URL: https://hooks.zapier.com/hooks/catch/23907654/uu8mdov/')
       
-      const response = await fetch('https://hooks.zapier.com/hooks/catch/23907654/uu6qkth/', {
+      const response = await fetch('https://hooks.zapier.com/hooks/catch/23907654/uu8mdov/', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
@@ -245,7 +245,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
                       }}
                       className="block w-full text-left px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors"
                     >
-                      Solar Bird Proofing
+                      Bird Proofing
                     </button>
 
                   </div>
@@ -361,7 +361,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
                         }}
                         className="block w-full text-left px-8 py-2 text-gray-600 hover:bg-gray-100"
                       >
-                        Solar Bird Proofing
+                        Bird Proofing
                       </button>
                       
                     </div>
@@ -846,7 +846,7 @@ const ResidentialCleaning = ({ scrollToSection, navigateToPage }) => {
               <ul className="space-y-1 text-sm text-secondary-foreground/80">
                 <li><button onClick={() => navigateToPage('residential-cleaning')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Residential Solar Cleaning</button></li>
                 <li><button onClick={() => navigateToPage('commercial-om')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Commercial O&M</button></li>
-                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Solar Bird Proofing</button></li>
+                <li><button onClick={() => navigateToPage('solar-bird-proofing')} className="hover:text-primary transition-colors text-left py-0 leading-tight">Bird Proofing</button></li>
               </ul>
             </div>
 
